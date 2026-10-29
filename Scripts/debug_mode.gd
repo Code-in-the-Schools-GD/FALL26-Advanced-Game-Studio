@@ -31,6 +31,7 @@ func _ready() -> void:
 
 func initial_debug_save() -> void:
 	if not debug_save.debug_active: return
+	print("[DM] Debug active!")
 	
 	match debug_save.skip_load:
 		SkipLoad.NONE:
