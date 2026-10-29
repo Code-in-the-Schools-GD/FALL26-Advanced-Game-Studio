@@ -3,6 +3,10 @@ extends Control
 
 @export var order: Array[FadeInObject]
 
+@export var fade_in_time: float = 60.0
+@export var wait_time: float = 60.0
+@export var fade_out_time: float = 60.0
+
 
 func _ready() -> void:
 	for obj: FadeInObject in order:
@@ -14,13 +18,13 @@ func _ready() -> void:
 			await obj.associated_node.animation_finished
 		else:
 			obj.associated_node.modulate.a = 0.0
-			for i in range(60):
-				obj.associated_node.modulate.a += 1 / 60.0
+			for i in range(fade_in_time):
+				obj.associated_node.modulate.a += 1 / fade_in_time
 				await get_tree().process_frame
-		for i in range(60):
+		for i in range(wait_time):
 			await get_tree().process_frame
-		for i in range(30):
-			obj.associated_node.modulate.a -= 1 / 30.0
+		for i in range(fade_out_time):
+			obj.associated_node.modulate.a -= 1 / fade_out_time
 			await get_tree().process_frame
 		obj.associated_node.hide()
 	

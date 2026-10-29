@@ -19,7 +19,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ol5bj")
-order = Array[Resource]([SubResource("Resource_ol5bj")])
+order = Array[ExtResource("2_fuj3q")]([SubResource("Resource_ol5bj")])
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1110129763]
 z_index = -5
