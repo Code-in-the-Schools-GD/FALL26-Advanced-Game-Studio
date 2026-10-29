@@ -43,7 +43,7 @@ func add_fade_node(fade_res: FadeInObject) -> void:
 	else:
 		var rect := TextureRect.new()
 		rect.texture = fade_res.image
-		rect.size *= fade_res.scale
+		get_tree().process_frame.connect(func(): rect.custom_minimum_size = fade_res.scale * rect.size, CONNECT_ONE_SHOT)
 		rect.hide()
 		fade_res.associated_node = rect
 		$Statics.add_child(rect)
