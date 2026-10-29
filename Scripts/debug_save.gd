@@ -4,6 +4,7 @@ class_name DebugSave extends Resource
 @export var skip_load: DebugModeController.SkipLoad
 
 
+#region Unused
 func get_as_dict() -> Dictionary[String, Variant]:
 	return {
 		"skip_load": skip_load
@@ -28,3 +29,4 @@ func load_data(data: Dictionary) -> void:
 	for key in data:
 		assert(key in self, "[DM] Invalid debug preference key")
 		set(key, data[key])
+#endregion
