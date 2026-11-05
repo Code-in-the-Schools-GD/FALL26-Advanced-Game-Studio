@@ -6,6 +6,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3bgkm"]
 size = Vector2(38, 43)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fkybt"]
+size = Vector2(102, 29)
+
 [node name="Player" type="CharacterBody2D" unique_id=1348164110]
 collision_layer = 2
 script = ExtResource("1_cvnsp")
@@ -22,3 +25,6 @@ texture = ExtResource("2_6t5aa")
 [node name="Area2D" type="Area2D" parent="." unique_id=209579212]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2130856144]
+position = Vector2(52, 0)
+shape = SubResource("RectangleShape2D_fkybt")
+debug_color = Color(0.9993934, 0, 0.12844995, 0.41960785)
