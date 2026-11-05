@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://dftrpkfy22rxb"]
 
+[ext_resource type="Script" uid="uid://cr8i703aeg5l3" path="res://Scripts/player.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://o74w3dkc73se" path="res://index.icon.png" id="2_6t5aa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3bgkm"]
@@ -8,6 +9,7 @@ size = Vector2(38, 43)
 [node name="Player" type="CharacterBody2D" unique_id=1348164110]
 collision_layer = 2
 collision_mask = 2
+script = ExtResource("1_cvnsp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1646576369]
 position = Vector2(-1, -0.5)
