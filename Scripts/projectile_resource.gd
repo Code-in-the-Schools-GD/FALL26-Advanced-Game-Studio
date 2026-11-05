@@ -1,7 +1,10 @@
 class_name ProjectileResource extends Resource
 
 
-var attributes: Array[ProjectileAttribute]
+@export var attributes: Array[ProjectileAttribute]
+@export var can_rotate: bool = true
+
+@export var damage: int
 
 
 func make_projectile() -> Projectile:

@@ -38,3 +38,5 @@ func initial_debug_save() -> void:
 			pass
 		SkipLoad.FADE_IN:
 			get_tree().change_scene_to_file.call_deferred("res://Scenes/main_menu.tscn")
+		SkipLoad.MENU:
+			get_tree().change_scene_to_file.call_deferred("res://Scenes/test.tscn")
