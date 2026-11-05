@@ -17,9 +17,7 @@ func _physics_process(delta: float) -> void:
 		velocity += get_gravity() * delta
 
 	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		velocity.y = jump_force
-	elif gravity:
+	if Input.is_action_just_pressed("ui_accept") and is_on_floor() or not gravity:
 		velocity.y = jump_force
 
 	# Get the input direction and handle the movement/deceleration.
