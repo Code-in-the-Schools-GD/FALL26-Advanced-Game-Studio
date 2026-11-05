@@ -34,7 +34,7 @@ func _physics_process(delta: float) -> void:
 
 
 func take_damage(damage : int) -> void:
-	if can_take_damage:
+	if invulnerable:
 		health -= damage
 		print(damage,"taken",health,"Remaining")
 	if health <= 0:
@@ -42,6 +42,10 @@ func take_damage(damage : int) -> void:
 
 
 func attack(attack_damage: int) -> void:
+	pass
+
+
+func die(damage_source: DamageSource = null) -> void:
 	pass
 
 
