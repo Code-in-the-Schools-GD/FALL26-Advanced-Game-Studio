@@ -1,1 +1,0 @@
-class_name ProjectileHandler extends Node2D
