@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dftrpkfy22rxb" path="res://Scenes/player.tscn" id="1_lc1oi"]
 [ext_resource type="Script" uid="uid://emsodnsdvq5u" path="res://Scripts/camera.gd" id="2_8od7v"]
+[ext_resource type="Texture2D" uid="uid://c36ed45isawfh" path="res://Sprites/vi.png" id="3_qc4db"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_yv2td"]
 
@@ -17,3 +18,7 @@ shape = SubResource("WorldBoundaryShape2D_yv2td")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=467548626]
 script = ExtResource("2_8od7v")
+
+[node name="Vi" type="Sprite2D" parent="." unique_id=1824289436]
+position = Vector2(3, 165)
+texture = ExtResource("3_qc4db")

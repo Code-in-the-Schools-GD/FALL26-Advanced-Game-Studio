@@ -9,7 +9,7 @@ size = Vector2(38, 43)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fkybt"]
 size = Vector2(102, 29)
 
-[node name="Player" type="CharacterBody2D" unique_id=1348164110]
+[node name="Player" type="CharacterBody2D" unique_id=1348164110 groups=["Player"]]
 collision_layer = 2
 script = ExtResource("1_cvnsp")
 
