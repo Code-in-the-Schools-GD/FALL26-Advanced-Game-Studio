@@ -29,6 +29,10 @@ DebugMode="*uid://b8b7wsroerlgs"
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
+[global_group]
+
+Player=""
+
 [input]
 
 mouse_1={
