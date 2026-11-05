@@ -45,8 +45,5 @@ func attack(attack_damage: int) -> void:
 	pass
 
 
-func die() -> void:
-	print("Ur kinda dead folk")
-
 func testing_things_function(): ## its a function for testing things test things with it
 	take_damage(5)
