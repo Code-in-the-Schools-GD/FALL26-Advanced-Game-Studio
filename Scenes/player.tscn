@@ -10,6 +10,13 @@ size = Vector2(38, 43)
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("1_cvnsp")
+speed = null
+jump_force = null
+gravity = null
+max_health = null
+health = null
+invulnerable = null
+attact_damage = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1646576369]
 position = Vector2(-1, -0.5)

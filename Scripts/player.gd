@@ -33,14 +33,6 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 
-func take_damage(damage : int) -> void:
-	if invulnerable:
-		health -= damage
-		print(damage,"taken",health,"Remaining")
-	if health <= 0:
-		die()
-
-
 func attack(attack_damage: int) -> void:
 	pass
 
