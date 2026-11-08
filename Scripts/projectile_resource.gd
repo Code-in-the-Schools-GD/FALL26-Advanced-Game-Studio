@@ -2,10 +2,14 @@ class_name ProjectileResource extends Resource
 ## Data for different [Projectile]s
 
 
+## The name of this projectile
+@export var proj_name: String
 ## The [ProjectileAttribute]s that this projectile has
 @export var attributes: Array[ProjectileAttribute]
 ## If this projectile should rotate according to its velocity vector
 @export var can_rotate: bool = true
+## If this projectile should accelerate due to gravity
+@export var experiences_gravity: bool = true
 ## If this projectile should phase through the ground
 @export var semisolid: bool = false
 ## The [Explosive] that this projectile should spawn
@@ -42,6 +46,8 @@ func make_projectile() -> Projectile:
 		else:
 			proj.landed.connect(ex_node.explode.unbind(1))
 		proj.add_child(ex_node)
+	
+	proj.resource = self
 	return proj
 
 

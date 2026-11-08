@@ -5,6 +5,10 @@ class_name Player extends CombatCharacter
 @export var jump_force = -400.0
 
 
+func _ready() -> void:
+	pass
+
+
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("test_function_button"):
 		testing_things_function()
