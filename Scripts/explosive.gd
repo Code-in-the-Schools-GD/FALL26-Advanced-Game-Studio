@@ -24,7 +24,8 @@ class_name Explosive extends Area2D
 		if v:
 			body_entered.connect(activate_trap)
 		else:
-			body_entered.disconnect(activate_trap)
+			if body_entered.is_connected(activate_trap):
+				body_entered.disconnect(activate_trap)
 ## The delay before explosion when the trap is activated
 @export var trap_delay: float = 0.0
 
@@ -35,13 +36,6 @@ static func from_resource(ex: ExplosiveResource) -> Explosive:
 
 
 func _init(r: float = 100.0, st: float = 30, d: float = 50.0, dswd := false, trp := false, trpd: float = 0.0) -> void:
-	radius = r
-	strength = st
-	damage = d
-	damage_scales_with_distance = dswd
-	trap = trp
-	trap_delay = trpd
-	
 	var collision := CollisionShape2D.new()
 	collision.shape = CircleShape2D.new()
 	collision.shape.radius = radius
@@ -51,6 +45,13 @@ func _init(r: float = 100.0, st: float = 30, d: float = 50.0, dswd := false, trp
 	set_collision_layer_value(1, false)
 	set_collision_mask_value(1, false)
 	set_collision_mask_value(3, true)
+	
+	radius = r
+	strength = st
+	damage = d
+	damage_scales_with_distance = dswd
+	trap = trp
+	trap_delay = trpd
 
 
 ## Activates trap if there are any bodies in the area
