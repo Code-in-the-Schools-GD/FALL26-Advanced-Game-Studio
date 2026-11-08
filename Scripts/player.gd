@@ -3,7 +3,6 @@ class_name Player extends CombatCharacter
 
 @export var speed = 300.0
 @export var jump_force = -400.0
-@export var gravity: bool = true
 
 
 func _process(_delta: float) -> void:
@@ -13,7 +12,7 @@ func _process(_delta: float) -> void:
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
-	if not is_on_floor() and gravity:
+	if not is_on_floor() and experiences_gravity:
 		velocity += get_gravity() * delta
 
 	# Handle jump.
