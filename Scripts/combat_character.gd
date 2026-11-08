@@ -5,6 +5,7 @@ class_name CombatCharacter extends CharacterBody2D
 @export var health: int = 10
 @export var invulnerable: bool = true
 @export var attact_damage: int = 100 #pretty big number acording to luke
+@export var mass: float = 50.0
 
 
 func take_damage(damage: int) -> void:

@@ -1,6 +1,8 @@
 class_name Projectile extends CharacterBody2D
 
 
+signal landed(on: Node2D)
+
 @export var resource: ProjectileResource
 
 var in_air := true
@@ -19,3 +21,8 @@ func _physics_process(delta: float) -> void:
 					rotation += PI
 		
 		move_and_slide()
+
+
+func land(on: Node2D):
+	landed.emit(on)
+	
