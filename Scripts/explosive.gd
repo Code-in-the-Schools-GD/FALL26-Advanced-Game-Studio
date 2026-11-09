@@ -3,6 +3,9 @@ class_name Explosive extends Area2D
 ## An explosive.
 
 
+@export var explosive_owner: Node = null
+@export var damage_source: ExplosionDamageSource
+
 ## The radius of this explosion
 @export var radius: float = 100.0:
 	set(v):
@@ -31,11 +34,11 @@ class_name Explosive extends Area2D
 
 
 ## Creates a new [Explosive] from the data in [param ex]
-static func from_resource(ex: ExplosiveResource) -> Explosive:
-	return Explosive.new(ex.radius, ex.strength, ex.trap, ex.trap_delay)
+static func from_resource(ex: ExplosiveResource, ex_owner: Node = null) -> Explosive:
+	return Explosive.new(ex_owner, ex.radius, ex.strength, ex.trap, ex.trap_delay)
 
 
-func _init(r: float = 100.0, st: float = 30, d: float = 50.0, dswd := false, trp := false, trpd: float = 0.0) -> void:
+func _init(ex_owner: Node = null, r: float = 100.0, st: float = 30, d: float = 50.0, dswd := false, trp := false, trpd: float = 0.0) -> void:
 	var collision := CollisionShape2D.new()
 	collision.shape = CircleShape2D.new()
 	collision.shape.radius = radius
@@ -45,7 +48,9 @@ func _init(r: float = 100.0, st: float = 30, d: float = 50.0, dswd := false, trp
 	set_collision_layer_value(1, false)
 	set_collision_mask_value(1, false)
 	set_collision_mask_value(3, true)
+	damage_source = ExplosionDamageSource.new(self)
 	
+	explosive_owner = ex_owner
 	radius = r
 	strength = st
 	damage = d
@@ -84,4 +89,25 @@ func explode_node(node: CombatCharacter) -> void:
 	var total_damage: float = damage
 	if damage_scales_with_distance:
 		total_damage *= (1 - dist)
-	node.take_damage(roundi(total_damage))
+	node.take_damage(roundi(total_damage), damage_source)
+
+
+class ExplosionDamageSource extends DamageSource:
+	
+	
+	var explosive: Explosive
+	
+	
+	func _init(ex: Explosive) -> void:
+		explosive = ex
+		owner = ex.explosive_owner
+	
+	
+	func get_as_text() -> String:
+		return "Exploded by %s" % explosive
+	
+	
+	func get_death_message(_name: String) -> String:
+		if not is_instance_valid(owner):
+			return get_as_text()
+		return get_as_text() + " from %s" % owner.name
