@@ -30,6 +30,10 @@ func die(damage_source: DamageSource = null) -> void:
 	queue_free()
 
 
+func fall_into_hazard(hazard: Hazard) -> void:
+	die(hazard.damage_source)
+
+
 func teleport_to_last_safe_position(remove_velocity := true) -> void:
 	if remove_velocity: 
 		velocity = Vector2.ZERO

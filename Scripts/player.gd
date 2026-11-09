@@ -34,12 +34,22 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 
+@warning_ignore("unused_parameter")
 func attack(attack_damage: int) -> void:
 	pass
 
 
+@warning_ignore("unused_parameter")
 func die(damage_source: DamageSource = null) -> void:
 	pass
+
+
+func fall_into_hazard(hazard: Hazard) -> void:
+	health -= hazard.damage
+	if health <= 0:
+		die(hazard.damage_source)
+	else:
+		teleport_to_last_safe_position()
 
 
 func testing_things_function(): ## its a function for testing things test things with it
