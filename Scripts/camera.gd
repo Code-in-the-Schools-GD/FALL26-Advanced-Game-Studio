@@ -1,6 +1,10 @@
 extends Camera2D
+## Controller for the [Player]'s camera
+class_name Camera
 
+## The position that the camera moves to
 var target_pos: Vector2
+## Is the camera being affected by a [CameraLock]?
 var is_locked: bool = false
 
 func _ready() -> void:
@@ -19,10 +23,12 @@ func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("mouse_2"):
 		remove_camera_lock()
 
+## Fixes the camera to a position
 func camera_lock(target: Vector2):
 	is_locked = true
 	target_pos = target
 
+## Unfixes the camera and resets the [member target_pos] to the [Player]
 func remove_camera_lock():
 	is_locked = false
 	target_pos = get_tree().get_first_node_in_group("Player").position
