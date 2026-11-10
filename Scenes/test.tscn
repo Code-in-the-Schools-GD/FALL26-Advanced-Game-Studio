@@ -4,19 +4,15 @@
 [ext_resource type="Script" uid="uid://emsodnsdvq5u" path="res://Scripts/camera.gd" id="2_8od7v"]
 [ext_resource type="Texture2D" uid="uid://c36ed45isawfh" path="res://Sprites/vi.png" id="3_qc4db"]
 [ext_resource type="Script" uid="uid://c8hiptl74kks5" path="res://Scripts/explosive.gd" id="4_ys1qc"]
-[ext_resource type="Script" uid="uid://bpd4ds3uxq1sp" path="res://Scripts/arena.gd" id="5_0c07c"]
-[ext_resource type="Script" uid="uid://bllgsp0f4y4xc" path="res://Scripts/bandit.gd" id="5_35xla"]
-[ext_resource type="Script" uid="uid://db4cl6r8sgm4u" path="res://Scripts/melee_attack.gd" id="6_i3aeo"]
+[ext_resource type="PackedScene" uid="uid://xtu40kendnu" path="res://Scenes/bandit.tscn" id="5_i3aeo"]
 [ext_resource type="Script" uid="uid://6welmi74eycg" path="res://Scripts/camera_lock.gd" id="7_5wyu1"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_yv2td"]
 
-[sub_resource type="GDScript" id="GDScript_ys1qc"]
+[sub_resource type="GDScript" id="GDScript_i3aeo"]
 
-[sub_resource type="Resource" id="Resource_0c07c"]
-script = SubResource("GDScript_ys1qc")
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1dvcg"]
+[sub_resource type="Resource" id="Resource_5wyu1"]
+script = SubResource("GDScript_i3aeo")
 
 [node name="Test" type="Node2D" unique_id=1991151697]
 
@@ -41,30 +37,18 @@ position = Vector2(138, 134)
 collision_layer = 0
 collision_mask = 4
 script = ExtResource("4_ys1qc")
-damage_source = SubResource("Resource_0c07c")
+damage_source = SubResource("Resource_5wyu1")
 strength = 500.0
 trap = true
 trap_delay = 1.0
 metadata/_custom_type_script = "uid://c8hiptl74kks5"
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1681556308]
-script = ExtResource("5_0c07c")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1536345915]
 
-[node name="Waves" type="Node2D" parent="Area2D" unique_id=1041860994]
-
-[node name="Enemy" type="CharacterBody2D" parent="." unique_id=711520104]
+[node name="Bandit" parent="." unique_id=50186996 instance=ExtResource("5_i3aeo")]
 position = Vector2(-209, 18)
-script = ExtResource("5_35xla")
-metadata/_custom_type_script = "uid://rl0ojjsdvidr"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy" unique_id=1354204744]
-shape = SubResource("RectangleShape2D_1dvcg")
-
-[node name="MeleeAttack" type="Node2D" parent="Enemy" unique_id=197373373]
-script = ExtResource("6_i3aeo")
-metadata/_custom_type_script = "uid://db4cl6r8sgm4u"
 
 [node name="TestCamLock" type="Node2D" parent="." unique_id=807535281]
 position = Vector2(600, 50)
