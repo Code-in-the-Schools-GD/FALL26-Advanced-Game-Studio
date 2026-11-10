@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://xtu40kendnu"]
+
+[ext_resource type="Script" uid="uid://bllgsp0f4y4xc" path="res://Scenes/bandit.gd" id="1_avrwa"]
+[ext_resource type="Script" uid="uid://db4cl6r8sgm4u" path="res://Scripts/melee_attack.gd" id="2_540n8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1dvcg"]
+
+[node name="Bandit" type="CharacterBody2D" unique_id=50186996]
+script = ExtResource("1_avrwa")
+metadata/_custom_type_script = "uid://rl0ojjsdvidr"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1526520942]
+shape = SubResource("RectangleShape2D_1dvcg")
+
+[node name="MeleeAttack" type="Node2D" parent="." unique_id=22799691]
+script = ExtResource("2_540n8")
+metadata/_custom_type_script = "uid://db4cl6r8sgm4u"
