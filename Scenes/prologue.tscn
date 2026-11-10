@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://daw1c7ixq8oc8"]
+
+[ext_resource type="Texture2D" uid="uid://balacnh7g5y81" path="res://Sprites/foreground.png" id="1_ctcux"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_4ckav"]
+load_path = "res://.godot/imported/foreground2.png-e52ea8b905609acdfe9ada7c2fc735a5.ctex"
+
+[node name="Prologue" type="Node2D" unique_id=514133810]
+
+[node name="Foreground" type="Sprite2D" parent="." unique_id=1468973679]
+position = Vector2(1790, 309)
+scale = Vector2(0.5979167, 0.59814805)
+texture = ExtResource("1_ctcux")
+
+[node name="Foreground2" type="Sprite2D" parent="." unique_id=1929344312]
+position = Vector2(254.99998, 464.00006)
+scale = Vector2(0.76354164, 0.7740741)
+texture = SubResource("CompressedTexture2D_4ckav")
