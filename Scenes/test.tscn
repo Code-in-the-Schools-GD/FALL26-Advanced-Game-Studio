@@ -4,13 +4,16 @@
 [ext_resource type="Script" uid="uid://emsodnsdvq5u" path="res://Scripts/camera.gd" id="2_8od7v"]
 [ext_resource type="Texture2D" uid="uid://c36ed45isawfh" path="res://Sprites/vi.png" id="3_qc4db"]
 [ext_resource type="Script" uid="uid://c8hiptl74kks5" path="res://Scripts/explosive.gd" id="4_ys1qc"]
+[ext_resource type="Script" uid="uid://bllgsp0f4y4xc" path="res://Scenes/bandit.gd" id="5_35xla"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_yv2td"]
 
-[sub_resource type="GDScript" id="GDScript_ys1qc"]
+[sub_resource type="GDScript" id="GDScript_i3aeo"]
 
-[sub_resource type="Resource" id="Resource_35xla"]
-script = SubResource("GDScript_ys1qc")
+[sub_resource type="Resource" id="Resource_5wyu1"]
+script = SubResource("GDScript_i3aeo")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1dvcg"]
 
 [node name="Test" type="Node2D" unique_id=1991151697]
 
@@ -35,7 +38,7 @@ position = Vector2(138, 134)
 collision_layer = 0
 collision_mask = 4
 script = ExtResource("4_ys1qc")
-damage_source = SubResource("Resource_35xla")
+damage_source = SubResource("Resource_5wyu1")
 strength = 500.0
 trap = true
 trap_delay = 1.0
@@ -44,3 +47,11 @@ metadata/_custom_type_script = "uid://c8hiptl74kks5"
 [node name="Area2D" type="Area2D" parent="." unique_id=1681556308]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1536345915]
+
+[node name="Enemy" type="CharacterBody2D" parent="." unique_id=711520104]
+position = Vector2(-209, 18)
+script = ExtResource("5_35xla")
+metadata/_custom_type_script = "uid://rl0ojjsdvidr"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy" unique_id=1354204744]
+shape = SubResource("RectangleShape2D_1dvcg")
