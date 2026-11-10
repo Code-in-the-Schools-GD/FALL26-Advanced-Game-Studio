@@ -1,4 +1,4 @@
-class_name Arena extends Area2D
+extends Area2D
 
 
 signal wave_cleared
