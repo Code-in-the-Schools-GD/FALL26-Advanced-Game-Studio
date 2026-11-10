@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://c36ed45isawfh" path="res://Sprites/vi.png" id="3_qc4db"]
 [ext_resource type="Script" uid="uid://c8hiptl74kks5" path="res://Scripts/explosive.gd" id="4_ys1qc"]
 [ext_resource type="Script" uid="uid://bllgsp0f4y4xc" path="res://Scenes/bandit.gd" id="5_35xla"]
+[ext_resource type="Script" uid="uid://6welmi74eycg" path="res://Scripts/camera_lock.gd" id="5_35xla"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_yv2td"]
 
@@ -26,7 +27,7 @@ position = Vector2(0, 111)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1984660717]
 shape = SubResource("WorldBoundaryShape2D_yv2td")
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=467548626]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=467548626 groups=["Camera"]]
 script = ExtResource("2_8od7v")
 
 [node name="Vi" type="Sprite2D" parent="." unique_id=1824289436]
@@ -55,3 +56,8 @@ metadata/_custom_type_script = "uid://rl0ojjsdvidr"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy" unique_id=1354204744]
 shape = SubResource("RectangleShape2D_1dvcg")
+
+[node name="TestCamLock" type="Node2D" parent="." unique_id=807535281]
+position = Vector2(600, 50)
+script = ExtResource("5_35xla")
+y_offset = -35.0
