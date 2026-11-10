@@ -5,17 +5,15 @@
 [ext_resource type="Texture2D" uid="uid://c36ed45isawfh" path="res://Sprites/vi.png" id="3_qc4db"]
 [ext_resource type="Script" uid="uid://c8hiptl74kks5" path="res://Scripts/explosive.gd" id="4_ys1qc"]
 [ext_resource type="Script" uid="uid://dbj32f2jqqmyu" path="res://Scripts/arena_better.gd" id="5_2cgwh"]
-[ext_resource type="Script" uid="uid://bllgsp0f4y4xc" path="res://Scripts/bandit.gd" id="5_35xla"]
 [ext_resource type="PackedScene" uid="uid://xtu40kendnu" path="res://Scenes/bandit.tscn" id="5_i3aeo"]
-[ext_resource type="Texture2D" uid="uid://o74w3dkc73se" path="res://index.icon.png" id="7_2cgwh"]
 [ext_resource type="Script" uid="uid://6welmi74eycg" path="res://Scripts/camera_lock.gd" id="7_5wyu1"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_yv2td"]
 
-[sub_resource type="GDScript" id="GDScript_ys1qc"]
+[sub_resource type="GDScript" id="GDScript_i3aeo"]
 
-[sub_resource type="Resource" id="Resource_iaow0"]
-script = SubResource("GDScript_ys1qc")
+[sub_resource type="Resource" id="Resource_2cgwh"]
+script = SubResource("GDScript_i3aeo")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yb21e"]
 size = Vector2(541, 120)
@@ -43,7 +41,7 @@ position = Vector2(138, 134)
 collision_layer = 0
 collision_mask = 4
 script = ExtResource("4_ys1qc")
-damage_source = SubResource("Resource_iaow0")
+damage_source = SubResource("Resource_2cgwh")
 strength = 500.0
 trap = true
 trap_delay = 1.0
@@ -60,38 +58,10 @@ shape = SubResource("RectangleShape2D_yb21e")
 
 [node name="Wave1" type="Node" parent="Arena/Waves" unique_id=579235320]
 
-[node name="Enemy" type="Node2D" parent="Arena/Waves/Wave1" unique_id=1056915714]
-script = ExtResource("5_35xla")
-
-[node name="Sprite2D" type="Sprite2D" parent="Arena/Waves/Wave1/Enemy" unique_id=554020408]
-scale = Vector2(0.171875, 0.171875)
-texture = ExtResource("7_2cgwh")
-
-[node name="Enemy2" type="Node2D" parent="Arena/Waves/Wave1" unique_id=165521952]
-script = ExtResource("5_35xla")
-
-[node name="Sprite2D" type="Sprite2D" parent="Arena/Waves/Wave1/Enemy2" unique_id=323592692]
-scale = Vector2(0.171875, 0.171875)
-texture = ExtResource("7_2cgwh")
-
 [node name="Wave2" type="Node" parent="Arena/Waves" unique_id=1367173492]
 
-[node name="Enemy" type="Node2D" parent="Arena/Waves/Wave2" unique_id=1991337345]
-script = ExtResource("5_35xla")
-
-[node name="Sprite2D" type="Sprite2D" parent="Arena/Waves/Wave2/Enemy" unique_id=115463788]
-scale = Vector2(0.171875, 0.171875)
-texture = ExtResource("7_2cgwh")
-
-[node name="Enemy2" type="Node2D" parent="Arena/Waves/Wave2" unique_id=947228692]
-script = ExtResource("5_35xla")
-
-[node name="Sprite2D" type="Sprite2D" parent="Arena/Waves/Wave2/Enemy2" unique_id=1531295199]
-scale = Vector2(0.171875, 0.171875)
-texture = ExtResource("7_2cgwh")
-
 [node name="Bandit" parent="." unique_id=50186996 instance=ExtResource("5_i3aeo")]
-position = Vector2(-209, 18)
+position = Vector2(-179, -55)
 
 [node name="TestCamLock" type="Node2D" parent="." unique_id=807535281]
 position = Vector2(600, 50)
