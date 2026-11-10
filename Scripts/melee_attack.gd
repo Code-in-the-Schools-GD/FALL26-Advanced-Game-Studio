@@ -1,6 +1,7 @@
 class_name MeleeAttack extends Attack
 
 
+@export var cooldown: float = 2.0
 @export var attack_time: float = 1.0
 @export var base_damage: int = 10
 @export var area: Area2D
