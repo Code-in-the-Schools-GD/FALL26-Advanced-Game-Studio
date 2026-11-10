@@ -5,6 +5,8 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1dvcg"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_1dvcg"]
+
 [node name="Bandit" type="CharacterBody2D" unique_id=50186996]
 script = ExtResource("1_avrwa")
 metadata/_custom_type_script = "uid://rl0ojjsdvidr"
@@ -15,3 +17,9 @@ shape = SubResource("RectangleShape2D_1dvcg")
 [node name="MeleeAttack" type="Node2D" parent="." unique_id=22799691]
 script = ExtResource("2_540n8")
 metadata/_custom_type_script = "uid://db4cl6r8sgm4u"
+
+[node name="Area2D" type="Area2D" parent="MeleeAttack" unique_id=156420546]
+position = Vector2(-20, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MeleeAttack/Area2D" unique_id=1483812732]
+shape = SubResource("CircleShape2D_1dvcg")

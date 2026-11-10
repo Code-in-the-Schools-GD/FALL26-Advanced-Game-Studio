@@ -1,7 +1,8 @@
 class_name MeleeAttack extends Attack
 
 
-@export var base_damage: int
+@export var attack_time: float = 1.0
+@export var base_damage: int = 10
 @export var area: Area2D
 
 
@@ -12,6 +13,9 @@ func _ready() -> void:
 func execute() -> void:
 	for node: Node2D in get_targeted_nodes():
 		attack_node(node)
+	area.body_entered.connect(attack_node)
+	await get_tree().create_timer(attack_time).timeout
+	area.body_entered.disconnect(attack_node)
 
 
 func attack_node(node: Node2D) -> void:
