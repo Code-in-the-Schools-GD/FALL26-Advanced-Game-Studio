@@ -29,9 +29,17 @@ func _ready() -> void:
 		initial_debug_save()
 
 
+func log_message(message: String, source: String = "") -> void:
+	if not debug_save.debug_active:
+		return
+	if not source.is_empty():
+		message = ("[%s] " % source) + message
+	print(message)
+
+
 func initial_debug_save() -> void:
 	if not debug_save.debug_active: return
-	print("[DM] Debug active!")
+	log_message("Debug active!", "DM")
 	
 	match debug_save.skip_load:
 		SkipLoad.NONE:
