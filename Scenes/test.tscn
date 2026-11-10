@@ -7,6 +7,11 @@
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_yv2td"]
 
+[sub_resource type="GDScript" id="GDScript_ys1qc"]
+
+[sub_resource type="Resource" id="Resource_35xla"]
+script = SubResource("GDScript_ys1qc")
+
 [node name="Test" type="Node2D" unique_id=1991151697]
 
 [node name="Player" parent="." unique_id=1348164110 instance=ExtResource("1_lc1oi")]
@@ -30,6 +35,7 @@ position = Vector2(138, 134)
 collision_layer = 0
 collision_mask = 4
 script = ExtResource("4_ys1qc")
+damage_source = SubResource("Resource_35xla")
 strength = 500.0
 trap = true
 trap_delay = 1.0
