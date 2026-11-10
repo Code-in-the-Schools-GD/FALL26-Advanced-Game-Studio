@@ -40,3 +40,7 @@ strength = 500.0
 trap = true
 trap_delay = 1.0
 metadata/_custom_type_script = "uid://c8hiptl74kks5"
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1681556308]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1536345915]
