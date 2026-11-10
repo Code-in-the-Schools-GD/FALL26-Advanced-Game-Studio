@@ -2,9 +2,11 @@
 
 [ext_resource type="Script" uid="uid://cr8i703aeg5l3" path="res://Scripts/player.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://o74w3dkc73se" path="res://index.icon.png" id="2_6t5aa"]
+[ext_resource type="Script" uid="uid://b13l3sdqlb6yn" path="res://Scripts/player_melee_attack.gd" id="3_6t5aa"]
+[ext_resource type="Script" uid="uid://db4cl6r8sgm4u" path="res://Scripts/melee_attack.gd" id="3_vgqql"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3bgkm"]
-size = Vector2(38, 43)
+size = Vector2(38, 50)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fkybt"]
 size = Vector2(102, 29)
@@ -22,9 +24,24 @@ position = Vector2(-1.9999962, 3.8146973e-06)
 scale = Vector2(0.3203125, 0.3671875)
 texture = ExtResource("2_6t5aa")
 
-[node name="Area2D" type="Area2D" parent="." unique_id=209579212]
+[node name="MeleeAttack" type="Node2D" parent="." unique_id=215054632 node_paths=PackedStringArray("area")]
+script = ExtResource("3_vgqql")
+base_damage = 10
+area = NodePath("Area2D")
+metadata/_custom_type_script = "uid://db4cl6r8sgm4u"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2130856144]
+[node name="Area2D" type="Area2D" parent="MeleeAttack" unique_id=209579212]
+collision_layer = 0
+collision_mask = 4
+script = ExtResource("3_6t5aa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MeleeAttack/Area2D" unique_id=2130856144]
 position = Vector2(52, 0)
 shape = SubResource("RectangleShape2D_fkybt")
 debug_color = Color(0.9993934, 0, 0.12844995, 0.41960785)
+
+[node name="RayCast2D" type="RayCast2D" parent="." unique_id=686022827]
+position = Vector2(-1, 3)
+target_position = Vector2(0, -25)
+
+[connection signal="body_entered" from="MeleeAttack/Area2D" to="MeleeAttack/Area2D" method="_on_body_entered"]

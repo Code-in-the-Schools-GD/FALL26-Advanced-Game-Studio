@@ -4,7 +4,7 @@ class_name CombatCharacter extends CharacterBody2D
 @export var max_health: int = 10
 @export var health: int = 10
 @export var invulnerable: bool = false
-@export var attact_damage: int = 100 #pretty big number acording to luke
+@export var attack_damage: int = 100 #pretty big number acording to luke
 @export var mass: float = 50.0
 @export var experiences_gravity: bool = true
 
