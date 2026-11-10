@@ -10,16 +10,6 @@
 
 [node name="Bandit" type="CharacterBody2D" unique_id=50186996]
 script = ExtResource("1_avrwa")
-kinetic_friction = null
-air_resistance = null
-agro_dist = null
-max_agro_dist = null
-max_health = null
-health = null
-invulnerable = null
-attack_damage = null
-mass = null
-experiences_gravity = null
 metadata/_custom_type_script = "uid://rl0ojjsdvidr"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1526520942]
