@@ -5,7 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://c36ed45isawfh" path="res://Sprites/vi.png" id="3_qc4db"]
 [ext_resource type="Script" uid="uid://c8hiptl74kks5" path="res://Scripts/explosive.gd" id="4_ys1qc"]
 [ext_resource type="Script" uid="uid://bllgsp0f4y4xc" path="res://Scenes/bandit.gd" id="5_35xla"]
-[ext_resource type="Script" uid="uid://6welmi74eycg" path="res://Scripts/camera_lock.gd" id="5_35xla"]
+[ext_resource type="Script" uid="uid://db4cl6r8sgm4u" path="res://Scripts/melee_attack.gd" id="6_i3aeo"]
+[ext_resource type="Script" uid="uid://6welmi74eycg" path="res://Scripts/camera_lock.gd" id="7_5wyu1"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_yv2td"]
 
@@ -57,7 +58,11 @@ metadata/_custom_type_script = "uid://rl0ojjsdvidr"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy" unique_id=1354204744]
 shape = SubResource("RectangleShape2D_1dvcg")
 
+[node name="MeleeAttack" type="Node2D" parent="Enemy" unique_id=197373373]
+script = ExtResource("6_i3aeo")
+metadata/_custom_type_script = "uid://db4cl6r8sgm4u"
+
 [node name="TestCamLock" type="Node2D" parent="." unique_id=807535281]
 position = Vector2(600, 50)
-script = ExtResource("5_35xla")
+script = ExtResource("7_5wyu1")
 y_offset = -35.0
