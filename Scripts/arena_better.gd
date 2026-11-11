@@ -1,6 +1,8 @@
 ## Handels the arenas
 class_name Arena extends Area2D
 
+
+@warning_ignore("unused_signal")
 ## Fires when a wave is completed
 signal wave_cleared
 
@@ -29,5 +31,5 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
