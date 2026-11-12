@@ -1,6 +1,8 @@
 class_name Enemy extends CombatCharacter
 
 
+signal dead
+
 @export var kinetic_friction: float = 2.1
 @export var air_resistance: float = 0.8
 
@@ -32,6 +34,11 @@ func take_damage(damage: int, source: DamageSource = null, take_offense: bool = 
 			current_agro = source.owner
 		else:
 			inanimate_agro = source.owner
+
+
+func die(damage_source: DamageSource = null) -> void:
+	super()
+	dead.emit()
 
 
 func get_agro() -> CombatCharacter:
