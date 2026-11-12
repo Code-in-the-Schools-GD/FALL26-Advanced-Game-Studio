@@ -9,6 +9,15 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_1dvcg"]
 radius = 20.0
 
+[sub_resource type="Gradient" id="Gradient_540n8"]
+offsets = PackedFloat32Array(0, 0.5, 1)
+colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1)
+metadata/_snap_enabled = true
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_1dvcg"]
+gradient = SubResource("Gradient_540n8")
+fill_from = Vector2(0, 1)
+
 [node name="Bandit" type="CharacterBody2D" unique_id=50186996]
 script = ExtResource("1_avrwa")
 metadata/_custom_type_script = "uid://rl0ojjsdvidr"
@@ -18,14 +27,8 @@ shape = SubResource("RectangleShape2D_1dvcg")
 
 [node name="MeleeAttack" type="Node2D" parent="." unique_id=22799691 node_paths=PackedStringArray("area", "attribution")]
 script = ExtResource("2_540n8")
-flippable = null
-cooldown = null
-attack_time = null
-base_damage = null
 area = NodePath("Area2D")
-active = null
 attribution = NodePath("..")
-can_attack_self = null
 metadata/_custom_type_script = "uid://db4cl6r8sgm4u"
 
 [node name="Area2D" type="Area2D" parent="MeleeAttack" unique_id=156420546]
@@ -42,3 +45,15 @@ scale = Vector2(0.4, 0.4)
 texture = ExtResource("3_540n8")
 region_enabled = true
 region_rect = Rect2(40, 40, 50, 50)
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=1470465308]
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_1dvcg")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=49554737]
+z_index = -1
+offset_left = -46.0
+offset_top = -47.0
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0.17, 0.17, 0.17, 1)
