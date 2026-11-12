@@ -26,7 +26,7 @@ func execute() -> void:
 
 func attack_node(node: Node2D) -> void:
 	if node is CombatCharacter and node != attribution:
-		node.take_damage(get_damage(node))
+		node.take_damage(get_damage(node), damage_source)
 
 
 func get_targeted_nodes() -> Array[Node2D]:

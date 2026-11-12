@@ -18,8 +18,14 @@ shape = SubResource("RectangleShape2D_1dvcg")
 
 [node name="MeleeAttack" type="Node2D" parent="." unique_id=22799691 node_paths=PackedStringArray("area", "attribution")]
 script = ExtResource("2_540n8")
+flippable = null
+cooldown = null
+attack_time = null
+base_damage = null
 area = NodePath("Area2D")
+active = null
 attribution = NodePath("..")
+can_attack_self = null
 metadata/_custom_type_script = "uid://db4cl6r8sgm4u"
 
 [node name="Area2D" type="Area2D" parent="MeleeAttack" unique_id=156420546]
