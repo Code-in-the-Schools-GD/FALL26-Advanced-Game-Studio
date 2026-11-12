@@ -1,8 +1,12 @@
 extends Area2D
+## Script for spawning enemies using an Area2D as the bountry
 class_name Arena
 
+## Fires when all enemies in a wave are cleared
 signal wave_cleared
 
+## The waves the player will fight [br]
+## Can be done in scene (with nodes) or in the Inspector
 @export var waves: Array[Array]
 
 var current_wave: int
