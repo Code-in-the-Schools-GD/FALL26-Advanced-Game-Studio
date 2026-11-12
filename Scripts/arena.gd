@@ -1,5 +1,5 @@
 extends Area2D
-
+class_name Arena
 
 signal wave_cleared
 
@@ -20,7 +20,7 @@ func _ready() -> void:
 	for wave: Array in waves:
 		for enemy: Enemy in wave:
 			enemy.arena = self
-			enemy.disabled = true
+			#enemy.disabled = true
 
 
 func start_arena(player: Player):

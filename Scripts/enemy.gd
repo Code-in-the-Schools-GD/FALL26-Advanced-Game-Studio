@@ -9,6 +9,7 @@ class_name Enemy extends CombatCharacter
 
 var current_agro: CombatCharacter
 var inanimate_agro: Node2D
+var arena: Arena
 
 
 func _ready() -> void:

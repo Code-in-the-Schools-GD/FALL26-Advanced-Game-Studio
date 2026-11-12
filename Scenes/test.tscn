@@ -4,16 +4,16 @@
 [ext_resource type="Script" uid="uid://emsodnsdvq5u" path="res://Scripts/camera.gd" id="2_8od7v"]
 [ext_resource type="Texture2D" uid="uid://c36ed45isawfh" path="res://Sprites/vi.png" id="3_qc4db"]
 [ext_resource type="Script" uid="uid://c8hiptl74kks5" path="res://Scripts/explosive.gd" id="4_ys1qc"]
-[ext_resource type="Script" uid="uid://dbj32f2jqqmyu" path="res://Scripts/arena_better.gd" id="5_2cgwh"]
+[ext_resource type="Script" uid="uid://bpd4ds3uxq1sp" path="res://Scripts/arena.gd" id="5_5wyu1"]
 [ext_resource type="PackedScene" uid="uid://xtu40kendnu" path="res://Scenes/bandit.tscn" id="5_i3aeo"]
 [ext_resource type="Script" uid="uid://6welmi74eycg" path="res://Scripts/camera_lock.gd" id="7_5wyu1"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_yv2td"]
 
-[sub_resource type="GDScript" id="GDScript_5wyu1"]
+[sub_resource type="GDScript" id="GDScript_0c07c"]
 
-[sub_resource type="Resource" id="Resource_0c07c"]
-script = SubResource("GDScript_5wyu1")
+[sub_resource type="Resource" id="Resource_2cgwh"]
+script = SubResource("GDScript_0c07c")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yb21e"]
 size = Vector2(541, 120)
@@ -41,14 +41,14 @@ position = Vector2(138, 134)
 collision_layer = 0
 collision_mask = 4
 script = ExtResource("4_ys1qc")
-damage_source = SubResource("Resource_0c07c")
+damage_source = SubResource("Resource_2cgwh")
 strength = 500.0
 trap = true
 trap_delay = 1.0
 metadata/_custom_type_script = "uid://c8hiptl74kks5"
 
 [node name="Arena" type="Area2D" parent="." unique_id=1681556308]
-script = ExtResource("5_2cgwh")
+script = ExtResource("5_5wyu1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Arena" unique_id=1536345915]
 position = Vector2(20.5, 50)
@@ -56,12 +56,15 @@ shape = SubResource("RectangleShape2D_yb21e")
 
 [node name="Waves" type="Node2D" parent="Arena" unique_id=136548890]
 
-[node name="Wave1" type="Node" parent="Arena/Waves" unique_id=579235320]
+[node name="Wave1" type="Node2D" parent="Arena/Waves" unique_id=1596087379]
 
-[node name="Wave2" type="Node" parent="Arena/Waves" unique_id=1367173492]
+[node name="Bandit" parent="Arena/Waves/Wave1" unique_id=50186996 instance=ExtResource("5_i3aeo")]
 
-[node name="Bandit" parent="." unique_id=50186996 instance=ExtResource("5_i3aeo")]
-position = Vector2(-179, -55)
+[node name="Wave2" type="Node2D" parent="Arena/Waves" unique_id=681623567]
+
+[node name="Bandit" parent="Arena/Waves/Wave2" unique_id=1564310815 instance=ExtResource("5_i3aeo")]
+
+[node name="Bandit2" parent="Arena/Waves/Wave2" unique_id=1250444745 instance=ExtResource("5_i3aeo")]
 
 [node name="TestCamLock" type="Node2D" parent="." unique_id=807535281]
 position = Vector2(600, 50)
