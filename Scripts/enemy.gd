@@ -27,7 +27,7 @@ func _physics_process(delta: float) -> void:
 
 func take_damage(damage: int, source: DamageSource = null, take_offense: bool = true) -> void:
 	super(damage, source, take_offense)
-	if take_offense:
+	if take_offense and source != null:
 		if source.owner is CombatCharacter:
 			current_agro = source.owner
 		else:
