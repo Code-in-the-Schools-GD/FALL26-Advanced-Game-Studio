@@ -48,6 +48,7 @@ trap_delay = 1.0
 metadata/_custom_type_script = "uid://c8hiptl74kks5"
 
 [node name="Arena" type="Area2D" parent="." unique_id=1681556308]
+position = Vector2(505, -66)
 script = ExtResource("5_5wyu1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Arena" unique_id=1536345915]
