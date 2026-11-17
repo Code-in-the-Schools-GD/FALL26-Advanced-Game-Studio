@@ -23,7 +23,6 @@ func _ready() -> void:
 				waves.append([])
 			waves[wave_idx].append(enemy)
 			enemy.disabled = true
-			print(enemy.process_mode)
 	
 	for wave: Array in waves:
 		for enemy: Enemy in wave:
@@ -32,7 +31,6 @@ func _ready() -> void:
 
 
 func start_arena(player: Player):
-	print(player)
 	if player.arena != null or completed_arena:
 		return
 	
