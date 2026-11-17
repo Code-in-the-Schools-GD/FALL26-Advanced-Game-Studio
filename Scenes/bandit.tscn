@@ -49,11 +49,3 @@ region_rect = Rect2(40, 40, 50, 50)
 shadow_enabled = true
 texture = ExtResource("4_42lhu")
 script = ExtResource("5_1j6wn")
-
-[node name="ColorRect" type="ColorRect" parent="." unique_id=49554737]
-z_index = -1
-offset_left = -46.0
-offset_top = -47.0
-offset_right = 40.0
-offset_bottom = 40.0
-color = Color(0.17, 0.17, 0.17, 1)
