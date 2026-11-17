@@ -15,9 +15,15 @@ class_name Player extends CombatCharacter
 var dashing: bool = false
 ## the Player is crouching or not
 var crouching: bool = false
+## Arena reference
+var arena: Arena = null
 
 ## Melee hitbox of the Player
 @onready var melee_attack_hitbox: Area2D = $MeleeAttack/Area2D
+##
+@onready var player_hitbox: CollisionShape2D = $CollisionShape2D
+##
+@onready var player_sprite: Sprite2D = $Sprite2D
 
 func _ready() -> void:
 	pass
@@ -54,9 +60,24 @@ func _physics_process(delta: float) -> void:
 ## If the Player pushes the dash button they dash
 	if Input.is_action_just_pressed("Dash") and not dashing:
 		if can_dash:
+			can_dash = false
 			dashing = true
 			await get_tree().create_timer(0.175).timeout
 			dashing = false
+			can_dash = true
+
+	## if the player can crouch or not
+	var can_crouch: bool = true
+	## if the player is crouching
+	var crouching: bool = false
+	## If the player pushes the crouch button they crouch
+	if Input.is_action_just_pressed("crouch") and not dashing:
+		if can_crouch:
+			if not crouching:
+				player_sprite.scale = Vector2(0.32, 0.18)
+				#player_hitbox.shape.s
+			else:
+				pass
 
 	move_and_slide()
 
