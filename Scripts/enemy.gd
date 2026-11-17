@@ -17,6 +17,7 @@ var arena: Arena
 func _ready() -> void:
 	set_collision_layer_value(1, false)
 	set_collision_layer_value(3, true)
+	super()
 
 
 func _physics_process(delta: float) -> void:
