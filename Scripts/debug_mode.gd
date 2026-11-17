@@ -41,10 +41,11 @@ func initial_debug_save() -> void:
 	if not debug_save.debug_active: return
 	log_message("Debug active!", "DM")
 	
-	match debug_save.skip_load:
-		SkipLoad.NONE:
-			pass
-		SkipLoad.FADE_IN:
-			get_tree().change_scene_to_file.call_deferred("res://Scenes/main_menu.tscn")
-		SkipLoad.MENU:
-			get_tree().change_scene_to_file.call_deferred("res://Scenes/test.tscn")
+	if get_tree().current_scene.name == &"FadeIn":
+		match debug_save.skip_load:
+			SkipLoad.NONE:
+				pass
+			SkipLoad.FADE_IN:
+				get_tree().change_scene_to_file.call_deferred("res://Scenes/main_menu.tscn")
+			SkipLoad.MENU:
+				get_tree().change_scene_to_file.call_deferred("res://Scenes/test.tscn")
