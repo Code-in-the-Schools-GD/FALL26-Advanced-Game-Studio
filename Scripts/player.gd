@@ -34,6 +34,8 @@ func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("test_function_button"):
 		## The function to test things
 		testing_things_function()
+	if Input.is_action_just_pressed("mouse_1"):
+		attack(1)
 
 
 func _physics_process(delta: float) -> void:
