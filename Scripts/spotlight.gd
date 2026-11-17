@@ -1,0 +1,1 @@
+class_name SpotLight extends PointLight2D
