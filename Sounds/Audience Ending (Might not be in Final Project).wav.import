@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dlquwapws20qt"
+path="res://.godot/imported/Audience Ending (Might not be in Final Project).wav-dfab060b1c2d4b23d65696d7ac8ea240.sample"
+
+[deps]
+
+source_file="res://Sounds/Audience Ending (Might not be in Final Project).wav"
+dest_files=["res://.godot/imported/Audience Ending (Might not be in Final Project).wav-dfab060b1c2d4b23d65696d7ac8ea240.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
