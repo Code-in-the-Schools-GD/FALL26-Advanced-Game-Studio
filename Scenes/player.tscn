@@ -23,9 +23,10 @@ position = Vector2(-1.9999962, 3.8146973e-06)
 scale = Vector2(0.3203125, 0.3671875)
 texture = ExtResource("2_6t5aa")
 
-[node name="MeleeAttack" type="Node2D" parent="." unique_id=215054632 node_paths=PackedStringArray("area")]
+[node name="MeleeAttack" type="Node2D" parent="." unique_id=215054632 node_paths=PackedStringArray("area", "attribution")]
 script = ExtResource("3_vgqql")
 area = NodePath("Area2D")
+attribution = NodePath("Area2D")
 metadata/_custom_type_script = "uid://db4cl6r8sgm4u"
 
 [node name="Area2D" type="Area2D" parent="MeleeAttack" unique_id=209579212]
