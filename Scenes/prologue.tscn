@@ -7,11 +7,11 @@
 [node name="Prologue" type="Node2D" unique_id=514133810]
 
 [node name="Foreground" type="Sprite2D" parent="." unique_id=1468973679]
-position = Vector2(589, 322.99994)
+position = Vector2(573.9999, 322.99994)
 scale = Vector2(0.5979167, 0.59814805)
 texture = ExtResource("1_ctcux")
 
 [node name="Foreground2" type="Sprite2D" parent="." unique_id=1929344312]
-position = Vector2(-945.9999, 478)
+position = Vector2(-961, 478)
 scale = Vector2(0.76354164, 0.7740741)
 texture = SubResource("CompressedTexture2D_4ckav")
