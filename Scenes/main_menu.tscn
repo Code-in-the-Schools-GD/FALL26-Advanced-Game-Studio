@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cgoyj63c3ygiv"]
 
 [ext_resource type="Script" uid="uid://brmivyl24n8jk" path="res://Scripts/main_menu.gd" id="1_28flt"]
+[ext_resource type="Script" uid="uid://dyrrdritrwhv0" path="res://Scenes/start_button.gd" id="2_48xlc"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_1dvcg"]
 font_size = 64
@@ -55,5 +56,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 32
 text = "Start"
+script = ExtResource("2_48xlc")
 
+[connection signal="button_down" from="StartButton" to="StartButton" method="_on_button_down"]
 [connection signal="pressed" from="StartButton" to="." method="start"]

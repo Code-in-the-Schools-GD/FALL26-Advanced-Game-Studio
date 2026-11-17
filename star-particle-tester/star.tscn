@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://bv7d1mir4lfda"]
+
+[ext_resource type="Script" uid="uid://dns1fkwwfjn4l" path="res://star.gd" id="1_46ao5"]
+
+[node name="Node2D" type="Node2D" unique_id=515768682]
+
+[node name="Star" type="Sprite2D" parent="." unique_id=706150373]
+modulate = Color(1, 1, 1, 0)
+z_index = 1
+texture_filter = 1
+script = ExtResource("1_46ao5")
