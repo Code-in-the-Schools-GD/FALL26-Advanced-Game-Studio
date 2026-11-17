@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cf27rmrtpr47m"]
+
+[ext_resource type="Texture2D" uid="uid://c1t4ctshdtmue" path="res://Sprites/Cawdors Castle.png" id="1_6k7ds"]
+
+[node name="Act2" type="Node2D" unique_id=454022877]
+
+[node name="CawdorsCastle" type="Sprite2D" parent="." unique_id=568785152]
+position = Vector2(587, 326)
+scale = Vector2(0.6010417, 0.59444445)
+texture = ExtResource("1_6k7ds")
