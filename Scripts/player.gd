@@ -10,11 +10,12 @@ class_name Player extends CombatCharacter
 @export var dash_cooldown: float = 5.0
 ## The dash's speed
 @export var dash_speed: float = 1500
-
+## if the player can crouch or not
+var can_crouch: bool = true
+## if the player is crouching
+var crouching: bool = false
 ## The Player is dashing or not
 var dashing: bool = false
-## the Player is crouching or not
-var crouching: bool = false
 ## Arena reference
 var arena: Arena = null
 
@@ -66,18 +67,20 @@ func _physics_process(delta: float) -> void:
 			dashing = false
 			can_dash = true
 
-	## if the player can crouch or not
-	var can_crouch: bool = true
-	## if the player is crouching
-	var crouching: bool = false
-	## If the player pushes the crouch button they crouch
+
+	# If the player pushes the crouch button they crouch
 	if Input.is_action_just_pressed("crouch") and not dashing:
 		if can_crouch:
 			if not crouching:
+				crouching = true
 				player_sprite.scale = Vector2(0.32, 0.18)
-				#player_hitbox.shape.s
-			else:
-				pass
+				player_hitbox.shape.size = Vector2(38,25)
+				print(crouching)
+			elif crouching:
+				crouching = false
+				player_hitbox.shape.size = Vector2(38,50)
+				player_sprite.scale = Vector2(0.32, 0.36)
+				print("no more crouching")
 
 	move_and_slide()
 
@@ -86,6 +89,7 @@ func _physics_process(delta: float) -> void:
 ## Does the melee attack
 func attack(melee_attack_damage: int, damage_source: DamageSource = null, take_offense := false) -> void:
 	$MeleeAttack.execute()
+	print("kaboom")
 
 
 @warning_ignore("unused_parameter")
@@ -103,4 +107,4 @@ func fall_into_hazard(hazard: Hazard) -> void:
 
 
 func testing_things_function(): ## its a function for testing things test things like functions with it
-	take_damage(5)
+	attack(1)
