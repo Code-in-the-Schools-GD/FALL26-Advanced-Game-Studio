@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cf27rmrtpr47m"]
 
-[ext_resource type="Texture2D" uid="uid://c1t4ctshdtmue" path="res://Sprites/Cawdors Castle.png" id="1_6k7ds"]
+[ext_resource type="Texture2D" uid="uid://c1t4ctshdtmue" path="res://Sprites/cawdors_castle.png" id="1_6k7ds"]
 
 [node name="Act2" type="Node2D" unique_id=454022877]
 
