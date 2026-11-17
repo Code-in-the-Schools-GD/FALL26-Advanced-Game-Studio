@@ -10,6 +10,7 @@ class_name CombatCharacter extends CharacterBody2D
 
 @export var disabled := false:
 	set(v):
+		disabled = v
 		process_mode = PROCESS_MODE_DISABLED if v else PROCESS_MODE_PAUSABLE
 		visible = not v
 
