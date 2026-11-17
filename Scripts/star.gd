@@ -17,6 +17,6 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	brightness = totaltime * (-totaltime + 2.5) / 1.5625
 	totaltime += delta
-	modulate = Color(0.7 * brightness + 0.3, 0.7 * brightness + 0.3, 0.7 * brightness + 0.3, brightness)
+	modulate = Color.from_hsv(0.0, 0.0, 0.7 * brightness + 0.3, brightness)
 	if brightness < 0:
 		queue_free()
