@@ -15,6 +15,8 @@ class_name Player extends CombatCharacter
 var dashing: bool = false
 ## the Player is crouching or not
 var crouching: bool = false
+## Arena reference
+var arena: Arena = null
 
 ## Melee hitbox of the Player
 @onready var melee_attack_hitbox: Area2D = $MeleeAttack/Area2D

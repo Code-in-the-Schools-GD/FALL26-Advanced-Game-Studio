@@ -13,6 +13,8 @@ var current_wave: int
 var amount_defeated: int
 var completed_arena: bool = false
 
+@onready var player_ref: Player = get_tree().get_first_node_in_group("Player")
+
 
 func _ready() -> void:
 	for wave_idx: int in $Waves.get_child_count():
@@ -28,6 +30,7 @@ func _ready() -> void:
 
 
 func start_arena(player: Player):
+	print(player)
 	if player.arena != null or completed_arena:
 		return
 	
@@ -61,3 +64,7 @@ func enemy_dead():
 	if amount_defeated >= waves[current_wave].size():
 		wave_cleared.emit()
 		amount_defeated = 0
+
+
+func _on_body_entered(body: Node2D) -> void:
+	start_arena(player_ref)
