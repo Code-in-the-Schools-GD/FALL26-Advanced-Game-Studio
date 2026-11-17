@@ -9,9 +9,9 @@ func _physics_process(delta: float) -> void:
 	
 	if current_agro != null:
 		var dir: Vector2
-		dir.x = -1 if current_agro.position < position else 1
+		dir.x = -1 if current_agro.position < global_position else 1
 		
-		if position.distance_to(current_agro.position) < 130:
+		if global_position.distance_to(current_agro.position) < 130:
 			#print($MeleeAttack.active)
 			if not $MeleeAttack.active:
 				$MeleeAttack.execute()

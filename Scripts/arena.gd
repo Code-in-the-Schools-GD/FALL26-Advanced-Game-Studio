@@ -22,6 +22,8 @@ func _ready() -> void:
 			if wave_idx > waves.size() - 1:
 				waves.append([])
 			waves[wave_idx].append(enemy)
+			enemy.disabled = true
+			print(enemy.process_mode)
 	
 	for wave: Array in waves:
 		for enemy: Enemy in wave:

@@ -61,16 +61,16 @@ shape = SubResource("RectangleShape2D_yb21e")
 [node name="Wave1" type="Node2D" parent="Arena/Waves" unique_id=1596087379]
 
 [node name="Bandit" parent="Arena/Waves/Wave1" unique_id=50186996 instance=ExtResource("5_i3aeo")]
-position = Vector2(589, 15)
+position = Vector2(426, 74)
 
 [node name="Wave2" type="Node2D" parent="Arena/Waves" unique_id=681623567]
 position = Vector2(589, 19)
 
 [node name="Bandit" parent="Arena/Waves/Wave2" unique_id=1564310815 instance=ExtResource("5_i3aeo")]
-position = Vector2(3, 1)
+position = Vector2(-58, 57)
 
 [node name="Bandit2" parent="Arena/Waves/Wave2" unique_id=1250444745 instance=ExtResource("5_i3aeo")]
-position = Vector2(-2, -4)
+position = Vector2(148, 56)
 
 [node name="TestCamLock" type="Node2D" parent="." unique_id=807535281]
 position = Vector2(600, 50)

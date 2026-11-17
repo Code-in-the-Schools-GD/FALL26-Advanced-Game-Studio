@@ -10,8 +10,8 @@ class_name CombatCharacter extends CharacterBody2D
 
 @export var disabled := false:
 	set(v):
-		process_mode = PROCESS_MODE_DISABLED if disabled else PROCESS_MODE_PAUSABLE
-		visible = not disabled
+		process_mode = PROCESS_MODE_DISABLED if v else PROCESS_MODE_PAUSABLE
+		visible = not v
 
 var last_safe_positions: Array[Vector2]
 
