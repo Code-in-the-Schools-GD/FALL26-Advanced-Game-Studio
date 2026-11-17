@@ -3,3 +3,4 @@
 [node name="AudioManagement" type="Node" unique_id=1154781420]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1587747119]
+bus = &"REVERB"
