@@ -3,10 +3,15 @@
 [ext_resource type="Script" uid="uid://bllgsp0f4y4xc" path="res://Scripts/bandit.gd" id="1_avrwa"]
 [ext_resource type="Script" uid="uid://db4cl6r8sgm4u" path="res://Scripts/melee_attack.gd" id="2_540n8"]
 [ext_resource type="Texture2D" uid="uid://1d7eexj3bkmg" path="res://Sprites/icon.svg" id="3_540n8"]
+[ext_resource type="Script" uid="uid://ds2grfpwk4heb" path="res://attack_damage_source.gd" id="3_dh25g"]
 [ext_resource type="Texture2D" uid="uid://0iuyxr166kfu" path="res://Resources/Textures/spotlight.tres" id="4_42lhu"]
 [ext_resource type="Script" uid="uid://cua7gqag1jeon" path="res://Scripts/spotlight.gd" id="5_1j6wn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1dvcg"]
+
+[sub_resource type="Resource" id="Resource_1j6wn"]
+script = ExtResource("3_dh25g")
+metadata/_custom_type_script = "uid://ds2grfpwk4heb"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1dvcg"]
 radius = 20.0
@@ -22,6 +27,7 @@ shape = SubResource("RectangleShape2D_1dvcg")
 script = ExtResource("2_540n8")
 area = NodePath("Area2D")
 attribution = NodePath("..")
+damage_source = SubResource("Resource_1j6wn")
 metadata/_custom_type_script = "uid://db4cl6r8sgm4u"
 
 [node name="Area2D" type="Area2D" parent="MeleeAttack" unique_id=156420546]

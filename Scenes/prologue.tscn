@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://daw1c7ixq8oc8"]
 
-[ext_resource type="Texture2D" uid="uid://balacnh7g5y81" path="res://Sprites/foreground.png" id="1_ctcux"]
+[ext_resource type="Texture2D" uid="uid://c1t4ctshdtmue" path="res://Sprites/Cawdors Castle.png" id="1_ctcux"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_4ckav"]
 
