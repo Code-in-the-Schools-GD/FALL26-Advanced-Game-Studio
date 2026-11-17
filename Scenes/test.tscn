@@ -12,7 +12,7 @@
 
 [sub_resource type="GDScript" id="GDScript_5wyu1"]
 
-[sub_resource type="Resource" id="Resource_0c07c"]
+[sub_resource type="Resource" id="Resource_5wyu1"]
 script = SubResource("GDScript_5wyu1")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yb21e"]
@@ -41,20 +41,19 @@ position = Vector2(138, 134)
 collision_layer = 0
 collision_mask = 4
 script = ExtResource("4_ys1qc")
-damage_source = SubResource("Resource_0c07c")
+damage_source = SubResource("Resource_5wyu1")
 strength = 500.0
 trap = true
 trap_delay = 1.0
 metadata/_custom_type_script = "uid://c8hiptl74kks5"
 
 [node name="Arena" type="Area2D" parent="." unique_id=1681556308]
-position = Vector2(505, -66)
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("5_5wyu1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Arena" unique_id=1536345915]
-position = Vector2(20.5, 50)
+position = Vector2(599, 50)
 shape = SubResource("RectangleShape2D_yb21e")
 
 [node name="Waves" type="Node2D" parent="Arena" unique_id=136548890]
@@ -62,12 +61,16 @@ shape = SubResource("RectangleShape2D_yb21e")
 [node name="Wave1" type="Node2D" parent="Arena/Waves" unique_id=1596087379]
 
 [node name="Bandit" parent="Arena/Waves/Wave1" unique_id=50186996 instance=ExtResource("5_i3aeo")]
+position = Vector2(589, 15)
 
 [node name="Wave2" type="Node2D" parent="Arena/Waves" unique_id=681623567]
+position = Vector2(589, 19)
 
 [node name="Bandit" parent="Arena/Waves/Wave2" unique_id=1564310815 instance=ExtResource("5_i3aeo")]
+position = Vector2(3, 1)
 
 [node name="Bandit2" parent="Arena/Waves/Wave2" unique_id=1250444745 instance=ExtResource("5_i3aeo")]
+position = Vector2(-2, -4)
 
 [node name="TestCamLock" type="Node2D" parent="." unique_id=807535281]
 position = Vector2(600, 50)
@@ -81,3 +84,5 @@ offset_top = -573.0
 offset_right = 1113.0
 offset_bottom = 909.0
 color = Color(0.4509804, 0.4509804, 0.4509804, 1)
+
+[connection signal="body_entered" from="Arena" to="Arena" method="start_arena"]

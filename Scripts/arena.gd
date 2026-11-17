@@ -26,7 +26,7 @@ func _ready() -> void:
 	for wave: Array in waves:
 		for enemy: Enemy in wave:
 			enemy.arena = self
-			#enemy.disabled = true
+			enemy.disabled = true
 
 
 func start_arena(player: Player):
@@ -36,8 +36,8 @@ func start_arena(player: Player):
 	
 	player.arena = self
 	
-	for wall: StaticBody2D in get_node("Walls").get_children():
-		wall.get_child(0).set_deferred("disabled", false)
+	#for wall: StaticBody2D in get_node("Walls").get_children():
+		#wall.get_child(0).set_deferred("disabled", false)
 	
 	for wave_idx: int in waves.size():
 		current_wave = wave_idx
@@ -52,8 +52,8 @@ func start_arena(player: Player):
 		
 		await wave_cleared
 	
-	for wall: StaticBody2D in get_node("Walls").get_children():
-		wall.get_child(0).set_deferred("disabled", true)
+	#for wall: StaticBody2D in get_node("Walls").get_children():
+		#wall.get_child(0).set_deferred("disabled", true)
 	
 	player.arena = null
 	completed_arena = true
