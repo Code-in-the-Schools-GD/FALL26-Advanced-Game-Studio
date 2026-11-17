@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://juc654lattu2"]
 
-[ext_resource type="Script" uid="uid://dviswq4twjkj5" path="res://Scripts/spawner.gd" id="2_0e48y"]
+[ext_resource type="Script" uid="uid://dviswq4twjkj5" path="res://Scripts/star_spawner.gd" id="2_0e48y"]
 [ext_resource type="Texture2D" uid="uid://ctj6m20b8td54" path="res://Sprites/Stages/Act I/act I VERY ROUGH draft.png" id="2_epypp"]
 [ext_resource type="Texture2D" uid="uid://ols1ltlpxca0" path="res://Sprites/Stages/Act I/Foreground.png" id="3_0hol4"]
 [ext_resource type="PackedScene" uid="uid://dftrpkfy22rxb" path="res://Scenes/player.tscn" id="4_3wpqw"]
