@@ -8,6 +8,11 @@ class_name CombatCharacter extends CharacterBody2D
 @export var mass: float = 50.0
 @export var experiences_gravity: bool = true
 
+@export var disabled := false:
+	set(v):
+		process_mode = PROCESS_MODE_DISABLED if disabled else PROCESS_MODE_PAUSABLE
+		visible = not disabled
+
 var last_safe_positions: Array[Vector2]
 
 
