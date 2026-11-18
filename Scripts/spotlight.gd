@@ -12,5 +12,9 @@ func _init() -> void:
 
 
 func _physics_process(delta: float) -> void:
+	if not is_instance_valid(target):
+		queue_free()
+		return
+	
 	position = position.lerp(target.position, delta * 6)
 	rotation = (position + offset).angle_to(target.position)
