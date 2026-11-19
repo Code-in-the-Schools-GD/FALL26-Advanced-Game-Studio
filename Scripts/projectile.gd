@@ -37,5 +37,6 @@ func _physics_process(delta: float) -> void:
 
 func land(on: Node2D):
 	landed.emit(on)
+	in_air = false
 	if on is CombatCharacter:
 		on.take_damage(resource.damage, damage_source)
