@@ -21,9 +21,28 @@ func _process(_delta: float) -> void:
 		#Sampling from a normal distribution
 		if ry < 0.5 and ry != 0:
 			ypos += 90*sqrt(-log(2*ry))
-			ypos = max(ypos, ymax)
+			ypos = min(ymax, ypos)
 		if ry > 0.5 and ry != 1:
 			ypos += -90 * sqrt(-log(2 - 2 * ry))
-			ypos = min(ypos, ymin)
-		ypos = clampf(ypos, ymin, ymax)
+			ypos = max(ymin, ypos)
 		instance.global_position = Vector2(rx - xlim / 2, ymax / 2 - ypos)
+
+
+#func _physics_process(_delta: float) -> void:
+	#var rand = randf();
+	#if(rand < 0.3):
+		#var instance = star_scene.instantiate()
+		#add_child(instance)
+		#var rx = randf()*xlim
+		#var ry = randf()
+		#var ypos = ymean
+		##Sampling from a normal distribution
+		#if(ry < 0.5 and ry != 0):
+			#ypos += 90*sqrt(-log(2*ry))
+			#if(ypos > ymax):
+				#ypos = ymax
+		#if(ry > 0.5 and ry != 1):
+			#ypos += -90*sqrt(-log(2-2*ry))
+			#if(ypos < ymin):
+				#ypos = ymin
+		#instance.global_position = Vector2(rx -xlim / 2, ymax/2 - ypos)

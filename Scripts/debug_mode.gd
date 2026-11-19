@@ -25,6 +25,8 @@ func _ready() -> void:
 		debug_save = DebugSave.new()
 		ResourceSaver.save(debug_save, res_path)
 	
+	#DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+	
 	if debug_save != null:
 		initial_debug_save()
 

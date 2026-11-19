@@ -2,4 +2,4 @@ extends Control
 
 
 func start() -> void:
-	pass
+	get_tree().change_scene_to_file("res://Scenes/act_1.tscn")

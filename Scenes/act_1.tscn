@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://ctj6m20b8td54" path="res://Sprites/Stages/Act I/act I VERY ROUGH draft.png" id="2_epypp"]
 [ext_resource type="Texture2D" uid="uid://ols1ltlpxca0" path="res://Sprites/Stages/Act I/Foreground.png" id="3_0hol4"]
 [ext_resource type="PackedScene" uid="uid://dftrpkfy22rxb" path="res://Scenes/player.tscn" id="4_3wpqw"]
+[ext_resource type="PackedScene" uid="uid://xtu40kendnu" path="res://Scenes/bandit.tscn" id="5_l8fhs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uq3xw"]
 
@@ -46,3 +47,12 @@ scale = Vector2(1, 54)
 shape = SubResource("RectangleShape2D_uq3xw")
 
 [node name="Player" parent="." unique_id=1348164110 instance=ExtResource("4_3wpqw")]
+
+[node name="Bandit" parent="." unique_id=50186996 instance=ExtResource("5_l8fhs")]
+position = Vector2(428, 247)
+
+[node name="Bandit2" parent="." unique_id=1343234806 instance=ExtResource("5_l8fhs")]
+position = Vector2(-321, 182)
+
+[node name="Bandit3" parent="." unique_id=647077052 instance=ExtResource("5_l8fhs")]
+position = Vector2(806, 233)
