@@ -27,7 +27,7 @@ func execute() -> void:
 
 func attack_node(node: Node2D) -> void:
 	if node is CombatCharacter and node != attribution:
-		SoundManager.play("res://Sounds/Sword Impact Sound.mp3")
+		SoundManager.play_sfx("res://Sounds/Sword Impact Sound.mp3")
 		node.take_damage(get_damage(node), damage_source)
 
 
