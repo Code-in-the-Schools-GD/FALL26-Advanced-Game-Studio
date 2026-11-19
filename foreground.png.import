@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c1t4ctshdtmue"
-path="res://.godot/imported/Cawdors Castle.png-1a6b9116a8f08f5a4c0b2f7ea3689357.ctex"
+uid="uid://ccbxaqa833ver"
+path="res://.godot/imported/foreground.png-2f01737783171ba7340b48a5028ba5e9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Cawdors Castle.png"
-dest_files=["res://.godot/imported/Cawdors Castle.png-1a6b9116a8f08f5a4c0b2f7ea3689357.ctex"]
+source_file="res://foreground.png"
+dest_files=["res://.godot/imported/foreground.png-2f01737783171ba7340b48a5028ba5e9.ctex"]
 
 [params]
 

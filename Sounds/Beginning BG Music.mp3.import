@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dw3axneuxjws6"
+path="res://.godot/imported/Beginning BG Music.mp3-6c98f1669a3c061c4350e97234a2c125.mp3str"
+
+[deps]
+
+source_file="res://Sounds/Beginning BG Music.mp3"
+dest_files=["res://.godot/imported/Beginning BG Music.mp3-6c98f1669a3c061c4350e97234a2c125.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4
