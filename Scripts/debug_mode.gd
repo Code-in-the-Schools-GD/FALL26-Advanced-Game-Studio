@@ -25,8 +25,6 @@ func _ready() -> void:
 		debug_save = DebugSave.new()
 		ResourceSaver.save(debug_save, res_path)
 	
-	#DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
-	
 	if debug_save != null:
 		initial_debug_save()
 
@@ -51,3 +49,7 @@ func initial_debug_save() -> void:
 				get_tree().change_scene_to_file.call_deferred("res://Scenes/main_menu.tscn")
 			SkipLoad.MENU:
 				get_tree().change_scene_to_file.call_deferred("res://Scenes/test.tscn")
+	
+	if not debug_save.window_size_override.is_zero_approx():
+		get_window().size = debug_save.window_size_override
+		get_window().move_to_center()
