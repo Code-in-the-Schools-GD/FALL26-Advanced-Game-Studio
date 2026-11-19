@@ -2,15 +2,10 @@ class_name MeleeAttack extends Attack
 
 
 @export var flippable: bool = true
-@export var cooldown: float = 2.0
 @export var attack_time: float = 1.0
 @export var base_damage: int = 10
 @export var area: Area2D
-@export var active: bool = false
 
-
-func _ready() -> void:
-	pass
 
 
 func execute() -> void:

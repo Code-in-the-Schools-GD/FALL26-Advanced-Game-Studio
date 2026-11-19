@@ -13,8 +13,10 @@ func _physics_process(delta: float) -> void:
 		
 		if global_position.distance_to(current_agro.position) < 130:
 			#print($MeleeAttack.active)
-			if not $MeleeAttack.active:
-				$MeleeAttack.execute()
+			#if not $MeleeAttack.active:
+				#$MeleeAttack.execute()
+			if not $RangedAttack.active:
+				$RangedAttack.execute()
 		else:
 			velocity.x = dir.x * 130
 		

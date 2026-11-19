@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://ds2grfpwk4heb" path="res://Scripts/attack_damage_source.gd" id="3_dh25g"]
 [ext_resource type="Texture2D" uid="uid://0iuyxr166kfu" path="res://Resources/Textures/spotlight.tres" id="4_42lhu"]
 [ext_resource type="Script" uid="uid://cua7gqag1jeon" path="res://Scripts/spotlight.gd" id="5_1j6wn"]
+[ext_resource type="Script" uid="uid://e8bf18h3y0co" path="res://Scripts/ranged_attack.gd" id="7_lsrrk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1dvcg"]
 
@@ -20,6 +21,11 @@ radius = 20.0
 script = ExtResource("1_avrwa")
 spotlight = NodePath("SpotLight")
 metadata/_custom_type_script = "uid://rl0ojjsdvidr"
+
+[node name="SpotLight" type="PointLight2D" parent="." unique_id=1875871076]
+texture = ExtResource("4_42lhu")
+script = ExtResource("5_1j6wn")
+metadata/_custom_type_script = "uid://cua7gqag1jeon"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1526520942]
 shape = SubResource("RectangleShape2D_1dvcg")
@@ -46,7 +52,7 @@ texture = ExtResource("3_540n8")
 region_enabled = true
 region_rect = Rect2(40, 40, 50, 50)
 
-[node name="SpotLight" type="PointLight2D" parent="." unique_id=1875871076]
-texture = ExtResource("4_42lhu")
-script = ExtResource("5_1j6wn")
-metadata/_custom_type_script = "uid://cua7gqag1jeon"
+[node name="RangedAttack" type="Node2D" parent="." unique_id=883157653 node_paths=PackedStringArray("attribution")]
+script = ExtResource("7_lsrrk")
+attribution = NodePath("..")
+metadata/_custom_type_script = "uid://e8bf18h3y0co"
