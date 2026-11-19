@@ -18,6 +18,7 @@ metadata/_custom_type_script = "uid://ds2grfpwk4heb"
 radius = 20.0
 
 [node name="Bandit" type="CharacterBody2D" unique_id=50186996 node_paths=PackedStringArray("spotlight")]
+collision_layer = 4
 script = ExtResource("1_avrwa")
 spotlight = NodePath("SpotLight")
 metadata/_custom_type_script = "uid://rl0ojjsdvidr"

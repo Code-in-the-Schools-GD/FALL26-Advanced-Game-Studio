@@ -21,20 +21,35 @@ class_name ProjectileResource extends Resource
 ## How much damage this projectile should do
 @export var damage: int
 
+@export var collision_size := Vector2(20, 2)
+@export var area_collision_size := Vector2(24, 4)
+
 
 ## Makes a new projectile from the stored data, or from the [member scene_path] (if applicable)
 func make_projectile() -> Projectile:
 	var proj: Projectile
 	if scene_path.is_empty():
 		proj = Projectile.new()
+		
 		var sprite := Sprite2D.new()
 		sprite.texture = texture
 		proj.add_child(sprite)
+		
+		var collision_box := CollisionShape2D.new()
+		collision_box.shape = RectangleShape2D.new()
+		collision_box.shape.size = collision_size
+		proj.add_child(collision_box)
+		
 		var area := Area2D.new()
 		area.set_collision_layer_value(1, false)
-		area.set_collision_mask_value(3, true)
+		area.set_collision_mask_value(4, true)
 		if not semisolid:
 			area.set_collision_mask_value(1, true)
+		var area_box := CollisionShape2D.new()
+		area_box.shape = RectangleShape2D.new()
+		area_box.shape.size = area_collision_size
+		area.add_child(area_box)
+		proj.add_child(area)
 	else:
 		proj = load(scene_path).instantiate()
 	
