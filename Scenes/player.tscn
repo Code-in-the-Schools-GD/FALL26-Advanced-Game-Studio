@@ -8,7 +8,7 @@
 size = Vector2(38, 50)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fkybt"]
-size = Vector2(102, 29)
+size = Vector2(102, 45)
 
 [node name="Player" type="CharacterBody2D" unique_id=1348164110 groups=["Player"]]
 collision_layer = 2
@@ -26,6 +26,7 @@ texture = ExtResource("2_6t5aa")
 [node name="MeleeAttack" type="Node2D" parent="." unique_id=215054632 node_paths=PackedStringArray("area", "attribution")]
 position = Vector2(17, -1)
 script = ExtResource("3_vgqql")
+attack_time = 0.05
 area = NodePath("Area2D")
 attribution = NodePath("..")
 metadata/_custom_type_script = "uid://db4cl6r8sgm4u"
@@ -35,7 +36,7 @@ collision_layer = 0
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MeleeAttack/Area2D" unique_id=2130856144]
-position = Vector2(52, 0)
+position = Vector2(52, 0.5)
 shape = SubResource("RectangleShape2D_fkybt")
 debug_color = Color(0.9993934, 0, 0.12844995, 0.41960785)
 

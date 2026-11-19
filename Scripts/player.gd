@@ -18,6 +18,8 @@ var crouching: bool = false
 var dashing: bool = false
 ## Arena reference
 var arena: Arena = null
+## if the Player can dash or not
+var can_dash: bool = true
 
 ## Melee hitbox of the Player
 @onready var melee_attack_hitbox: Area2D = $MeleeAttack/Area2D
@@ -40,6 +42,7 @@ func _process(_delta: float) -> void:
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
+	
 	if not is_on_floor() and experiences_gravity:
 		velocity += get_gravity() * delta
 
@@ -50,7 +53,7 @@ func _physics_process(delta: float) -> void:
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction := Input.get_axis("Left", "Right")
-	if dashing:
+	if dashing and direction:
 		velocity.y = 0
 		velocity.x = direction * dash_speed
 	elif direction:
@@ -58,15 +61,14 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = move_toward(velocity.x, 0, speed / 1.0 if is_on_floor() else 10.0)
  
-## if the Player can dash or not
-	var can_dash: bool = true
 ## If the Player pushes the dash button they dash
 	if Input.is_action_just_pressed("Dash") and not dashing:
-		if can_dash:
+		if can_dash and direction:
 			can_dash = false
 			dashing = true
 			await get_tree().create_timer(0.175).timeout
 			dashing = false
+			await get_tree().create_timer(dash_cooldown).timeout
 			can_dash = true
 
 
@@ -77,12 +79,13 @@ func _physics_process(delta: float) -> void:
 				crouching = true
 				player_sprite.scale = Vector2(0.32, 0.18)
 				player_hitbox.shape.size = Vector2(38,25)
-				print(crouching)
 			elif crouching:
 				crouching = false
 				player_hitbox.shape.size = Vector2(38,50)
 				player_sprite.scale = Vector2(0.32, 0.36)
-				print("no more crouching")
+
+
+	#$CollisionShape2D.scale.x *= direction
 
 	move_and_slide()
 
@@ -91,13 +94,12 @@ func _physics_process(delta: float) -> void:
 ## Does the melee attack
 func attack(melee_attack_damage: int, damage_source: DamageSource = null, take_offense := false) -> void:
 	$MeleeAttack.execute()
-	print("kaboom")
 
 
 @warning_ignore("unused_parameter")
 ## kills the Player
 func die(damage_source: DamageSource = null) -> void:
-	pass
+	get_tree().reload_current_scene()
 
 
 func fall_into_hazard(hazard: Hazard) -> void:
