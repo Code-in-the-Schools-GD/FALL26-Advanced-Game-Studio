@@ -2,6 +2,7 @@ class_name DebugSave extends Resource
 
 @export var debug_active: bool = false
 @export var skip_load: DebugModeController.SkipLoad
+@export var window_size_override := Vector2.ZERO
 
 
 #region Unused
