@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://clyihk1voot0t"]
+
+[ext_resource type="Texture2D" uid="uid://c34bl10u7yeqk" path="res://Sprites/ui.png" id="1_2t54b"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_rv0m1"]
+load_path = "res://.godot/imported/1ui.png-7c5e2f2612f215725f3ffd46d3c786a4.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mxmcg"]
+atlas = SubResource("CompressedTexture2D_rv0m1")
+region = Rect2(426.7151, 301.36368, 320.25122, 307.5046)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1fvjw"]
+atlas = ExtResource("1_2t54b")
+region = Rect2(780.8251, 314.24252, 284.81238, 292.4075)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jncj0"]
+atlas = ExtResource("1_2t54b")
+region = Rect2(17.527588, 318.04, 334.87286, 366.26443)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_r76qk"]
+load_path = "res://.godot/imported/ui.png-fe523705db8d431a342eb0d6b184efc8.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q0xx3"]
+atlas = SubResource("CompressedTexture2D_r76qk")
+region = Rect2(568.1651, 6.6450195, 334.87286, 286.517)
+
+[node name="Control" type="Control" unique_id=1940795118]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=898546656]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 170.0
+offset_right = 426.4698
+offset_bottom = 494.0
+scale = Vector2(0.195, 0.195)
+texture = SubResource("AtlasTexture_mxmcg")
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=514329941]
+layout_mode = 0
+offset_left = 148.0
+offset_top = 94.0
+offset_right = 432.0
+offset_bottom = 386.0
+scale = Vector2(0.195, 0.195)
+texture = SubResource("AtlasTexture_1fvjw")
+
+[node name="TextureRect3" type="TextureRect" parent="." unique_id=181141542]
+layout_mode = 0
+offset_left = 213.0
+offset_top = 188.0
+offset_right = 547.0
+offset_bottom = 554.0
+scale = Vector2(0.195, 0.195)
+texture = SubResource("AtlasTexture_jncj0")
+
+[node name="TextureRect4" type="TextureRect" parent="." unique_id=275499367]
+layout_mode = 0
+offset_left = 257.0
+offset_top = 93.0
+offset_right = 591.0
+offset_bottom = 379.0
+scale = Vector2(0.195, 0.195)
+texture = SubResource("AtlasTexture_q0xx3")
