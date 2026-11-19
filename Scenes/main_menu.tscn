@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://cgoyj63c3ygiv"]
 
 [ext_resource type="Script" uid="uid://brmivyl24n8jk" path="res://Scripts/main_menu.gd" id="1_28flt"]
+[ext_resource type="Texture2D" uid="uid://bsrg2utsfr38u" path="res://Sprites/TitleScreenConceptFull.png" id="2_1ehe0"]
+[ext_resource type="Texture2D" uid="uid://2ldir35p0g2f" path="res://Sprites/ButtonConcept.png" id="3_ce3w2"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_1dvcg"]
 font_size = 64
@@ -14,28 +16,23 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_28flt")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=154314880]
-z_index = -20
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-color = Color(0, 0, 0, 1)
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1061061482]
+layout_mode = 0
+offset_right = 1151.0
+offset_bottom = 645.0
+texture = ExtResource("2_1ehe0")
 
 [node name="Label" type="Label" parent="." unique_id=464165650]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -275.0
-offset_top = 64.0
-offset_right = 275.0
-offset_bottom = 152.0
+offset_left = -333.0
+offset_top = 45.0
+offset_right = 217.0
+offset_bottom = 133.0
 grow_horizontal = 2
-text = "Game Name Here"
+text = "Stage Fright"
 label_settings = SubResource("LabelSettings_1dvcg")
 horizontal_alignment = 1
 
@@ -47,14 +44,17 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -23.0
-offset_top = -15.5
-offset_right = 23.0
-offset_bottom = 15.5
+offset_left = -128.5
+offset_top = -60.0
+offset_right = 21.5
+offset_bottom = -7.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 0.63529414)
 theme_override_font_sizes/font_size = 32
 text = "Start"
+icon = ExtResource("3_ce3w2")
+icon_alignment = 1
 
 [connection signal="button_down" from="StartButton" to="StartButton" method="_on_button_down"]
 [connection signal="pressed" from="StartButton" to="." method="start"]
