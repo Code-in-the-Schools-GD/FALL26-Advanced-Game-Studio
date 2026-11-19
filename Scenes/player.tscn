@@ -27,7 +27,7 @@ texture = ExtResource("2_6t5aa")
 position = Vector2(17, -1)
 script = ExtResource("3_vgqql")
 area = NodePath("Area2D")
-attribution = NodePath("Area2D")
+attribution = NodePath("..")
 metadata/_custom_type_script = "uid://db4cl6r8sgm4u"
 
 [node name="Area2D" type="Area2D" parent="MeleeAttack" unique_id=209579212]

@@ -14,6 +14,7 @@ func _ready() -> void:
 
 
 func execute() -> void:
+	if active: return
 	active = true
 	for node: Node2D in get_targeted_nodes():
 		attack_node(node)
@@ -25,7 +26,6 @@ func execute() -> void:
 
 
 func attack_node(node: Node2D) -> void:
-	print(attribution)
 	if node is CombatCharacter and node != attribution:
 		print(node)
 		SoundManager.play("res://Sounds/Sword Impact Sound.mp3")
