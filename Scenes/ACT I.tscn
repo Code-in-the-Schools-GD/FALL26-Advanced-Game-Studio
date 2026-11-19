@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://tsqs0axv8r8g"]
+
+[ext_resource type="Script" path="res://Scripts/spawner.gd" id="2_0e48y"]
+[ext_resource type="Texture2D" uid="uid://ctj6m20b8td54" path="res://Sprites/Stages/Act I/act I VERY ROUGH draft.png" id="2_epypp"]
+[ext_resource type="Texture2D" uid="uid://ols1ltlpxca0" path="res://Sprites/Stages/Act I/Foreground.png" id="3_0hol4"]
+[ext_resource type="PackedScene" uid="uid://dftrpkfy22rxb" path="res://Scenes/player.tscn" id="4_3wpqw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uq3xw"]
+
+[node name="Node2D" type="Node2D" unique_id=260043835]
+
+[node name="Node2D" type="Node2D" parent="." unique_id=878250490]
+position = Vector2(-960, -540)
+scale = Vector2(3, 3)
+script = ExtResource("2_0e48y")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1190060688]
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=597191867]
+texture_filter = 1
+texture = ExtResource("2_epypp")
+
+[node name="Sprite2D3" type="Sprite2D" parent="." unique_id=1459537928]
+z_index = 2
+texture = ExtResource("3_0hol4")
+
+[node name="Floor" type="StaticBody2D" parent="." unique_id=204870766]
+position = Vector2(0, 340)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor" unique_id=1341640324]
+scale = Vector2(98, 1)
+shape = SubResource("RectangleShape2D_uq3xw")
+
+[node name="Left Wall" type="StaticBody2D" parent="." unique_id=1439657699]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Left Wall" unique_id=1678905847]
+position = Vector2(970, 0)
+scale = Vector2(1, 54)
+shape = SubResource("RectangleShape2D_uq3xw")
+
+[node name="Right Wall" type="StaticBody2D" parent="." unique_id=1364915312]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Right Wall" unique_id=1844428912]
+position = Vector2(-970, 0)
+scale = Vector2(1, 54)
+shape = SubResource("RectangleShape2D_uq3xw")
+
+[node name="Player" parent="." unique_id=1348164110 instance=ExtResource("4_3wpqw")]
