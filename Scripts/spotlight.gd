@@ -18,3 +18,4 @@ func _physics_process(delta: float) -> void:
 	
 	position = position.lerp(target.position, delta * 6)
 	rotation = (position + offset).angle_to(target.position)
+	print(rotation)
